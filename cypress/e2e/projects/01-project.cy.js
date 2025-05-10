@@ -23,7 +23,7 @@ describe('Homework 1', () => {
         const expectedOptions = ['Male', 'Female', 'Prefer not to disclose']
         cy.get('div .control > label.label').should('have.text', 'Gender *');
         cy.get(':nth-child(2) > .mr-1').should('have.attr', 'required');
-        expectedOptions.forEach(option => {
+        expectedOptions.each(option => {
             cy.contains(option).should('exist');
         });
         cy.get('[class="mr-1"]').check();
@@ -74,7 +74,10 @@ describe('Homework 1', () => {
     });
 
     it.only('Validate the form submission', () => {
-        cy.get('input[placeholder="Enter your full name"]').type('Aziz')
+        cy.get('input[placeholder="Enter your full name"]').type('Aziz');
         // I keep getting the cypress error 
+        cy.get();
     })
 });
+
+
